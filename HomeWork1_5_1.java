@@ -7,14 +7,16 @@ public class HomeWork1_5_1 {
         Scanner in = new Scanner(System.in);
         System.out.print("Введите Имя:");
         String name = in.next();
-        if (name.equals("Вася")){
+        String friend = "Вася";
+        String girlfriend = "Анастасия";
+        if (name.equals(friend)){
             System.out.println("Привет!");
             System.out.println("Я тебя так долго ждал");
         }
-        if (name.equals("Анастасия")){
+        if (name.equals(girlfriend)){
             System.out.println("Я тебя так долго ждал");
         }
-        if (!name.equals("Вася")&!name.equals("Анастасия")) {
+        if (!name.equals(friend)&&!name.equals(girlfriend)) {
             System.out.println("Добрый день, а вы кто?");
         }
 
