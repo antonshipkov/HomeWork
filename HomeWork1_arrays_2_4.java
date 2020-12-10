@@ -1,15 +1,16 @@
-package HomeWork1;
-
+package HomeWork1; //доделал 2.4.6-сумму цифр, не успел
+                   //  не сделал 2.4.5. не понимаю как добавить ряд внутрь рандомного
 import java.util.Arrays;
 import java.util.Random;
 
 public class HomeWork1_arrays_2_4 {
     public static void main(String[] args) {
 
-        int[] container1 = arrayRandom1(10, 100);
-        int[] container2 = arrayRandom2(10, 100);
-        int[] container3 = arrayRandom3(10, 100);
-        int[] container4 = arrayRandom4(10, 100);
+        int[] container1 = arrayRandom1(5, 100);
+        int[] container2 = arrayRandom2(5, 100);
+        int[] container3 = arrayRandom3(5, 100);
+        int[] container4 = arrayRandom4(5, 100);
+        int[] container5 = arrayRandom5(5, 100);
 
 
     }
@@ -130,14 +131,31 @@ public class HomeWork1_arrays_2_4 {
         return array;
     }
 
+    public static int[] arrayRandom5(int size, int maxValueExclusion) {
+
+        int[] array = new int[size];
+        Random rand = new Random();
+
+        System.out.print("Случайный массив чисел: ");
+        int number_create;
+        int sum = 0;
+
+        for (int i = 0; i < array.length; i++) {
+            array[i] = rand.nextInt(maxValueExclusion);
+            System.out.print(array[i] + "   ");
+            for (;array[i]>0;array[i]/=10){
+                number_create = array[i]%10;
+                sum = sum + number_create;
+            }
+        }
+        System.out.println();
+        System.out.println(" Сумма чисел = " +sum);
 
 
+        System.out.println();
 
-
-
-
-
-
+        return array;
+    }
 
 
 }
