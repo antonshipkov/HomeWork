@@ -1,3 +1,5 @@
+package HomeWork1;
+
 public class HomeWork4_WithCalculatorMain {
     public static void main(String[] args) {
         System.out.print("Выражение = ");
