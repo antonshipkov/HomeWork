@@ -2,7 +2,7 @@ package HomeWork1;
 
 public class HomeWork_loops2_1_2 {
     public static void main(String[] args) {
-        int number = recursion(12345);
+        int number = recursion(181232375);
         int number_create;
         int sum = 1;
         for (;number>0;number /=10){
@@ -11,14 +11,16 @@ public class HomeWork_loops2_1_2 {
         }
         System.out.println(" = " +sum);
 
+
     }
 
     public static int recursion(int number) {
 
-        if (number > 0) {
+        if (number > 1) {
             recursion(number / 10);
-            System.out.printf(" %d  ", (number % 10));
+            System.out.print(" * ");
         }
+        System.out.print(number % 10);
 
         return number;
     }

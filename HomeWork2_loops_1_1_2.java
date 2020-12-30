@@ -4,8 +4,12 @@ public class HomeWork2_loops_1_1_2 {
 
     public static void main(String[]args){
 
-        int n =5;
-        System.out.println("Произведение с рекурсией"  +factorial(5));
+        int max =5;
+        for (int i = 1;i<=max - 1;i++) {
+            System.out.print(i + " * ");
+        }
+        System.out.print(max);
+        System.out.print(" = "  +factorial(max));
 
     }
 
@@ -15,12 +19,9 @@ public class HomeWork2_loops_1_1_2 {
             return result;
         }
         else {
-            System.out.println("Число + " +n);
             result = n * factorial(n - 1);
             return result;
         }
 
     }
-
-
 }
