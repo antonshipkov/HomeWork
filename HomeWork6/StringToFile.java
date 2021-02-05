@@ -2,6 +2,9 @@ package HomeWork1.HomeWork6;
 
 import java.io.*;
 import java.util.Scanner;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileWriter;
 
 // Реализация записи курсов валют в txt файл
 public class StringToFile {
@@ -23,7 +26,17 @@ public class StringToFile {
 
                 try {
                     File file = new File(path);
+                    if(!file.exists()){ //переписал код, что бы можно было не перезаписывать файл
+                        System.out.println("Надо записать новый файл");
+                        file.createNewFile();
+                    }
+
+                    //переписал код, курсы добавляются в существующий файл по порядку
                     PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+                    out.write(Eur + "\n");
+                    out.write(Rub + "\n");
+                    out.write(Usd + "\n");
+                    out.flush();
                     out.close();
                     System.out.println("Файл записан");
                 } catch ( IOException e) {
@@ -38,8 +51,11 @@ public class StringToFile {
                         + separator +  "IdeaProjects" + separator + "jd1" + separator + "HomeWork"
                         + separator + "src" + separator + "HomeWork1" + separator + "HomeWork6" + separator +
                         "ratesNBRB.txt";
-                        File file = new File(path);
+                        File file = new File(path); //переписал код, курсы добавляются в существующий файл по порядку
                         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(file, true)));
+                        out.write(Eur + "\n");
+                        out.write(Rub + "\n");
+                        out.write(Usd + "\n");
                         out.close();
 
                 System.out.println("Файл записан");
@@ -54,12 +70,7 @@ public class StringToFile {
                 System.out.println("Упс ввели не 1 и 2");
 
         }
-        // зааисываем в txt курсы валют
-        FileWriter finalFile = new FileWriter(path);
-        finalFile.write(Eur + "\n");
-        finalFile.write(Rub + "\n");
-        finalFile.write(Usd + "\n");
-        finalFile.close();
+
 
         sc.close();
 
